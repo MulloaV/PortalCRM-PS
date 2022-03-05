@@ -1,0 +1,26 @@
+    <div class="card-group ">
+      <div class='card ' style="width: 100px;">
+        <div class='card-header '>
+          <h4 class='card-title'>Prospectos</h4>
+        </div>
+        <div class='card-body'>
+          <h5 class='card-title text-dark'><b><%= @leads.where(status: [:prospect]).count  %></b></h5>
+        </div>
+      </div>  
+      <div class='card ' style="width: 100px;">
+        <div class='card-header'>
+          <h4 class='card-title'>Prospectos Interesados</h4>
+        </div>
+        <div class='card-body'>
+          <h5 class='card-title text-dark'><b><%= @leads.where(status: [:interested]).count  %></b></h5>
+        </div>
+      </div>  
+      <div class='card ' style="width: 100px;">
+        <div class='card-header'>
+          <h4 class='card-title'>Clientes</h4>
+        </div>
+        <div class='card-body'>
+          <h5 class='card-title text-dark'><b><%= @leads.where(status: [:client]).count  %></b></h5>
+        </div>
+      </div>
+    </div>

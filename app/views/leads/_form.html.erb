@@ -1,0 +1,62 @@
+<%= form_with(model: lead) do |form| %>
+  <% if lead.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lead.errors.count, "error") %> prohibited this lead from being saved:</h2>
+
+      
+    </div>
+  <% end %>
+
+  <div class=" container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.label :first_name, "Nombre" %>
+                  <%= form.text_field :first_name, class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.label :last_name, "Apellido" %>
+                  <%= form.text_field :last_name, class: "form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.label :email, "Correo" %>
+                  <%= form.text_field :email, class: "form-control" %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.label :phone_number, "Teléfono" %>
+                  <%= form.text_field :phone_number, class: "form-control" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.label :status, "Estado" %>
+                  <%= form.select :status,  Lead.statuses.keys %>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group input-group mb-4">
+                  <%= form.submit "Guardar", class: "btn btn-primary" %>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>     
+    </div>
+  </div>
+<% end %>
+

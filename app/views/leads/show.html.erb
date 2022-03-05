@@ -1,0 +1,8 @@
+<%= render @lead %>
+
+<div>
+  <%= link_to "Editar Prospecto", edit_lead_path(@lead) %> |
+  <%= link_to "Volver a Inicio", leads_path %>
+
+  <%= button_to "Eliminar Prospecto", @lead, method: :delete %>
+</div>
